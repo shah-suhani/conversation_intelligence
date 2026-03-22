@@ -1,0 +1,21 @@
+{
+  "thread_id": "def_us",
+  "created_at": "2025-12-05T09:09:24.906739",
+  "updated_at": "2025-12-05T09:09:24.906779",
+  "topic_frequency": {
+    "service reliability complaints": 1,
+    "Premium Plan": 1,
+    "Plus Plan": 1
+  },
+  "preferred_entities": {
+    "airlines": [],
+    "hotels": [],
+    "brands": [],
+    "domains": []
+  },
+  "common_patterns": [
+    "comparison",
+    "complaint_analysis"
+  ],
+  "session_count": 0
+}

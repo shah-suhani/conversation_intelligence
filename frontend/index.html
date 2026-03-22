@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Research</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            },
+            colors: {
+              perplexity: {
+                dark: 'var(--bg-main)',
+                sidebar: 'var(--bg-sidebar)',
+                panel: 'var(--bg-panel)',
+                accent: '#00AAAA', // Teal-ish
+                text: 'var(--text-main)',
+                muted: 'var(--text-muted)',
+                border: 'var(--border-color)'
+              }
+            },
+            typography: (theme) => ({
+              DEFAULT: {
+                css: {
+                  color: theme('colors.gray.500'), // Fallback
+                  '--tw-prose-body': theme('colors.perplexity.text'),
+                  '--tw-prose-headings': theme('colors.perplexity.text'),
+                  '--tw-prose-lead': theme('colors.perplexity.muted'),
+                  '--tw-prose-links': theme('colors.perplexity.accent'),
+                  '--tw-prose-bold': theme('colors.perplexity.text'),
+                  '--tw-prose-counters': theme('colors.perplexity.muted'),
+                  '--tw-prose-bullets': theme('colors.perplexity.muted'),
+                  '--tw-prose-hr': theme('colors.perplexity.border'),
+                  '--tw-prose-quotes': theme('colors.perplexity.text'),
+                  '--tw-prose-quote-borders': theme('colors.perplexity.border'),
+                  '--tw-prose-captions': theme('colors.perplexity.muted'),
+                  '--tw-prose-code': theme('colors.perplexity.text'),
+                  '--tw-prose-pre-code': theme('colors.perplexity.text'),
+                  '--tw-prose-pre-bg': theme('colors.perplexity.panel'),
+                  '--tw-prose-th-borders': theme('colors.perplexity.border'),
+                  '--tw-prose-td-borders': theme('colors.perplexity.border'),
+                  a: {
+                    color: theme('colors.perplexity.accent'),
+                    '&:hover': {
+                      color: '#00cccc',
+                    },
+                  },
+                  code: {
+                    backgroundColor: theme('colors.perplexity.panel'),
+                    padding: '2px 4px',
+                    borderRadius: '4px',
+                    fontWeight: '400',
+                  },
+                  'code::before': {
+                    content: '""',
+                  },
+                  'code::after': {
+                    content: '""',
+                  },
+                },
+              },
+            }),
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Light Mode Variables */
+        --bg-main: #F3F4F6;
+        --bg-sidebar: #FFFFFF;
+        --bg-panel: #FFFFFF;
+        --text-main: #111827;
+        --text-muted: #6B7280;
+        --border-color: #E5E7EB;
+      }
+
+      .dark {
+        /* Dark Mode Variables */
+        --bg-main: #191A1A;
+        --bg-sidebar: #202222;
+        --bg-panel: #252526;
+        --text-main: #E8E8E8;
+        --text-muted: #A3A3A3;
+        --border-color: #333333;
+      }
+
+      body {
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-main); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--border-color); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted); 
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 3px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+        margin: 12px 0;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 3px;
+      }
+      .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-color) transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-markdown": "https://esm.sh/react-markdown@9?bundle",
+    "remark-gfm": "https://esm.sh/remark-gfm@4?bundle"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
